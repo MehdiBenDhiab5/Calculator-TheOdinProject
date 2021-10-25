@@ -40,7 +40,7 @@ numbers.forEach((elem)=>{
             result = ""
             display.textContent = ""
         }
-        if(!(numCurr.includes(".") && elem.textContent==".")){
+        if(!(numCurr.includes(".") && elem.textContent==".") && numCurr.length<13){
             numCurr += elem.textContent
         }
         display2.textContent = numCurr

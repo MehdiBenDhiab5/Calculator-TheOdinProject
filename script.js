@@ -109,3 +109,17 @@ clear.addEventListener("click",()=>{
     display2.textContent = ""
     display.textContent = ""
 })
+
+//backspace
+const backspace = document.querySelector("#delete")
+backspace.addEventListener("click",()=>{
+    if (op !=""){
+        op = ""
+        display.textContent = ""
+        numCurr = numOld
+        display2.textContent = numOld
+    }else if(numCurr != ""){
+        numCurr = numCurr.slice(0,numCurr.length -1)
+        display2.textContent = numCurr
+    }
+})

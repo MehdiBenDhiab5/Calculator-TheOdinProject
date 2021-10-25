@@ -52,14 +52,15 @@ let op = ""
 const operations = document.querySelectorAll(".operation")
 operations.forEach((elem)=>{
     elem.addEventListener("click",()=>{
-        if (op != ""){
+        if (op != "" && numOld!="" && numCurr!=""){
             calculaterino()
             op = elem.id
             numOld = numCurr
             numCurr = ""
             display2.textContent = ""
-        }
-        else if (numCurr != ""){
+        }else if(op!="" && numCurr==""){
+            op=elem.id
+        }else if (numCurr != ""){
             op = elem.id
             numOld = numCurr
             numCurr = ""
@@ -86,6 +87,13 @@ function calculaterino(){
         display2.textContent = ""
         numCurr=result
         op=""
+    }
+    if(op!="" && numOld!="" && numCurr==""){
+        result = numOld
+        numCurr = result
+        op = ""
+        display.textContent = numOld
+        display2.textContent = ""
     }
     
 }
